@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Triangle surface</title>
+    <script src='bower_components/jquery/dist/jquery.js'>
+    </script>
+
+    <style>
+        .hidden {
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+<button class="btn">Calculate triangle</button>
+<canvas id='canvas' class = 'hidden' width="500" height="300">
+</canvas>
+
+<script>
+var canvas= document.getElementById('canvas'),
+ctx=canvas.getContext('2d');
+a=canvas.getContext('2d');
+b=canvas.getContext('2d');
+c=canvas.getContext('2d');
+alfa=canvas.getContext('2d');
+beta=canvas.getContext('2d');
+gama=canvas.getContext('2d');
+
+a.beginPath();
+b.beginPath();
+c.beginPath();
+alfa.beginPath();
+beta.beginPath();
+gama.beginPath();
+
+a.moveTo(50,250);
+a.lineTo(450,250);
+a.stroke();
+b.moveTo(450,250);
+b.lineTo(200,50);
+b.stroke();
+c.moveTo(200,50);
+c.lineTo(50,250);
+c.stroke();
+
+alfa.moveTo(80,250);
+alfa.arc(50,250,30,2*Math.PI,1.7*Math.PI,true);
+a.stroke();
+beta.moveTo(420,250);
+beta.arc(450,250,30,Math.PI,1.2*Math.PI);
+beta.stroke();
+gama.moveTo(222,69);
+gama.arc(200,50,30,2.2*Math.PI,2.7*Math.PI);
+gama.stroke();
+
+
+$(".btn").on('click', function(){
+var $heading=$("canvas");
+if($heading.hasClass("hidden")){
+    $heading.removeClass("hidden");
+}else{
+    $heading.addClass("hidden");
+}
+});
+</script>
+
+</body>
+</html>
