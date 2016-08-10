@@ -15,9 +15,9 @@ var ImgSource = [
 
 $(function() {
 
-for (var y = 1; y < 3 ; y++) {
+for (var i = 1; i < 3 ; i++) {
 	$.each(ImgSource, function(i, val) {
-		$(Source).append("<div " + y + 1 + "/> ");
+		$(Source).append("<div " + i + 1 + "/> ");
 	});
 }
 }); 

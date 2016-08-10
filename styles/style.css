@@ -25,12 +25,10 @@ body {
 	cursor: pointer;
 	border-radius: 10px;
 	box-shadow: 0 1px 5px rgba(0,0,0,.5);
-  background: #6991AC;
-	;
+    background: #6991AC;
 }
 #boxcard div img {
-	border-radius: 10px;
-	
+	border-radius: 10px;	
 }
 #boxbuttons {
 	text-align: center;
@@ -51,5 +49,4 @@ body {
 
 #boxcard div:hover{
       background: #67727A;  
-	  background-image: url('..img/1.jpg')
 }
