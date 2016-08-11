@@ -5,8 +5,7 @@
 body {
 	font: 18px Verdana;
 	color: #FFF;
-    background-image: url('../img/bg.jpg');
-	background-size: cover;
+    background: #CCC;
 }
 #picbox {
 	margin: 0px auto;
