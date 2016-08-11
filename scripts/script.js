@@ -98,6 +98,7 @@ canvas.addEventListener('click', function (event) {
                     hasToBreak = false;
                     if (!current.state) {
                         current.count += 1;
+                        document.getElementById('counter').textContent = clickedCount;
                         if(current.count == 3){
                             current.state = true;
                             continue;
@@ -150,6 +151,7 @@ function Draw(){
 }
 
 Draw();
+
 
 
     
