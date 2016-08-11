@@ -4,6 +4,8 @@ Team members: prot3ct, Kristina.Barutska, shOOter,  Suzana_Manova_2, Krasimir_Zl
 
 The URL of Git repository: https://github.com/KristinaBarutska/Kamikaze
 
+Live preview of the application: https://rawgit.com/KristinaBarutska/Kamikaze/master/index.html
+
 Brief description:
 
 "Memory" is a fun game that you may have played in "real life", with actual paper tiles. It's called that because the main skill in the game is your memory - how well you can remember the position of tiles.
