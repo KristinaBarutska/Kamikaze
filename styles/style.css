@@ -8,12 +8,15 @@ body {
     background-image: url('../img/bg.jpg');
 	background-size: cover;
 }
+#head{
+	display: block;
+	text-align: center;
+}
 #picbox {
 	margin: 0px auto;
 	width: 640px;
 }
 #boxcard {
-	
 	margin: 10px 0 0;
 }
 #boxcard div{

@@ -151,7 +151,8 @@ function Draw(){
 
 Draw();
 
-console.log(tiles);
+document.getElementById('counter').innerHTML = clickedCount;
+
     
 
 
