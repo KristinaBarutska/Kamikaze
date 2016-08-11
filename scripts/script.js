@@ -73,13 +73,13 @@ for (var col = 0; col < cols; col++) {
     }
 }
 
-var flippedTiles = [];
-var delayStartFC = null;
+var scoreCounter = 0;
 var numTries = 0;
 var randomImageIndex = 0;
 var clickedCount = 0;
 var firstPreviousClickedTile = 0;
 var secondPreviousClickedTile = 0;
+var totalClicks = 0;
 canvas.addEventListener('click', function (event) {
     var x = event.pageX - canvasLeft,
         y = event.pageY - canvasTop;
@@ -88,9 +88,11 @@ canvas.addEventListener('click', function (event) {
     for (var i = 0; i < tiles.length; i++) {
         var tile = tiles[i];
         if (tile.isUnderMouse(x, y)) {
+            totalClicks += 1;
+            document.getElementById('counter').textContent = totalClicks;
             tile.isFaceUp = true;
             
-            if(tile.face === undefined){
+            if(!tile.face){
                 var hasToBreak = false;
                 while(!hasToBreak){
                     randomImageIndex = Math.floor(Math.random() * tiles.length / 2);
@@ -98,7 +100,6 @@ canvas.addEventListener('click', function (event) {
                     hasToBreak = false;
                     if (!current.state) {
                         current.count += 1;
-                        document.getElementById('counter').textContent = clickedCount;
                         if(current.count == 3){
                             current.state = true;
                             continue;
@@ -115,17 +116,43 @@ canvas.addEventListener('click', function (event) {
                 if(clickedCount !== 1 && (firstPreviousClickedTile.face !== secondPreviousClickedTile.face)){
                     firstPreviousClickedTile.isFaceUp = false;
                     secondPreviousClickedTile.isFaceUp = false;
-                }       
+                    scoreCounter -= 2;
+                }   
+                if(clickedCount !== 1 && (firstPreviousClickedTile.face === secondPreviousClickedTile.face)){
+                    scoreCounter += 10;        
+                }
                 firstPreviousClickedTile = tile;            
             }
             else{
                 secondPreviousClickedTile = tile;
             }
+            document.getElementById('scoreButton').textContent = 'Score: ' + scoreCounter + ' points';
             Draw();
         }
         
     }
 
+}, false);
+
+document.getElementById('resetButton').addEventListener('click', function (event) {
+    for (var i = 0; i < tiles.length; i++) {
+        tiles[i].face = undefined;
+        tiles[i].isFaceUp = false;
+        totalClicks = 0;
+        scoreCounter = 0;
+        randomImageIndex = 0;
+        clickedCount = 0;
+        firstPreviousClickedTile = 0;
+        secondPreviousClickedTile = 0;
+        document.getElementById('scoreButton').textContent = 'Score: ' + scoreCounter + ' points';
+        document.getElementById('counter').textContent = totalClicks;
+        if(i < tiles.length / 2){
+            numberStates[i].state = false;
+            numberStates[i].count = 0;
+        }
+    }
+
+    Draw();
 }, false);
 
 
