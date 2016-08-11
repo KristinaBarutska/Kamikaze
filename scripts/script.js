@@ -1,23 +1,47 @@
-var Source = "#boxcard";
+var canvas = document.getElementById('boxcard'),
+    ctx = canvas.getContext('2d');
 
-var ImgSource = [
-  '../img/1.jpg',
-  '../img/2.jpg',
-  '../img/3.jpg',
-  '../img/4.jpg',
-  '../img/5.jpg',
-  '../img/6.jpg',
-  '../img/7.jpg',
-  '../img/8.jpg',
-  '../img/9.jpg',
-  '../img/10.jpg'
+var images = [
+    document.getElementById('img1'),
+    document.getElementById('img2'),
+    document.getElementById('img3'),
+    document.getElementById('img4'),
+    document.getElementById('img5'),
+    document.getElementById('img6'),
+    document.getElementById('img7'),
+    document.getElementById('img8'),
+    document.getElementById('img9'),
+    document.getElementById('img10'),
+    document.getElementById('img1'),
+    document.getElementById('img2'),
+    document.getElementById('img3'),
+    document.getElementById('img4'),
+    document.getElementById('img5'),
+    document.getElementById('img6'),
+    document.getElementById('img7'),
+    document.getElementById('img8'),
+    document.getElementById('img9'),
+    document.getElementById('img10')
 ];
 
-$(function() {
+var Tile = function (x, y, face) {
+    this.x = x;
+    this.y = y;
+    this.face = face;
+    this.width = 70;
+};
 
-for (var i = 1; i < 3 ; i++) {
-	$.each(ImgSource, function(i, val) {
-		$(Source).append('<div />');
-	});
+for (var i = 0; i < 20; i++) {
+    ctx.drawImage(
+        images[i],
+        (i * images[i].width),
+        0,
+        images[i].width,
+        images[i].height);
 }
-}); 
+
+    
+
+
+
+
