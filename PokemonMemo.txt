@@ -6,6 +6,8 @@ The URL of Git repository: https://github.com/KristinaBarutska/Kamikaze
 
 Live preview of the application: https://rawgit.com/KristinaBarutska/Kamikaze/master/index.html
 
+Link for the project in  http://best.telerikacademy.com:  http://best.telerikacademy.com/projects/317/PokemonMemo
+
 Brief description:
 
 "Memory" is a fun game that you may have played in "real life", with actual paper tiles. It's called that because the main skill in the game is your memory - how well you can remember the position of tiles.
