@@ -3,6 +3,12 @@ var canvas = document.getElementById('boxcard'),
     canvasTop = canvas.offsetTop,
     ctx = canvas.getContext('2d');
 
+var gradient=ctx.createLinearGradient(0,0,170,0);
+gradient.addColorStop("0","magenta");
+gradient.addColorStop("0.5","blue");
+gradient.addColorStop("1.0","red");
+
+
 var rows = 4;
 var cols = 5;
 
@@ -31,7 +37,7 @@ var backImage = document.getElementById('pokemon-logo');
 
 Tile.prototype.drawFaceDown = function () {
     ctx.fillStyle = '#6991AC';
-    ctx.strokeStyle = "#999";
+    ctx.strokeStyle = gradient;
     ctx.fillRect(this.x, this.y, this.width, this.width);
     ctx.stroke();
     ctx.drawImage(backImage, 0, 0, this.width, this.width, this.x, this.y, this.width, this.width);
@@ -74,7 +80,6 @@ for (var col = 0; col < cols; col++) {
 }
 
 var scoreCounter = 0;
-var numTries = 0;
 var randomImageIndex = 0;
 var clickedCount = 0;
 var firstPreviousClickedTile = 0;
@@ -116,10 +121,9 @@ canvas.addEventListener('click', function (event) {
                 if(clickedCount !== 1 && (firstPreviousClickedTile.face !== secondPreviousClickedTile.face)){
                     firstPreviousClickedTile.isFaceUp = false;
                     secondPreviousClickedTile.isFaceUp = false;
-                    scoreCounter -= 2;
                 }   
                 if(clickedCount !== 1 && (firstPreviousClickedTile.face === secondPreviousClickedTile.face)){
-                    scoreCounter += 10;        
+                    scoreCounter += 2;
                 }
                 firstPreviousClickedTile = tile;            
             }
