@@ -151,7 +151,6 @@ function Draw(){
 
 Draw();
 
-document.getElementById('counter').innerHTML = clickedCount;
 
     
 
