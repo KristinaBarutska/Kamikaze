@@ -8,6 +8,8 @@ Live preview of the application: https://rawgit.com/KristinaBarutska/Kamikaze/ma
 
 Link for the project in  http://best.telerikacademy.com:  http://best.telerikacademy.com/projects/317/PokemonMemo
 
+Link for the Youtube video: https://www.youtube.com/watch?v=UHM3Ub0KQks&feature=youtu.be
+
 Brief description:
 
 "Memory" is a fun game that you may have played in "real life", with actual paper tiles. It's called that because the main skill in the game is your memory - how well you can remember the position of tiles.
