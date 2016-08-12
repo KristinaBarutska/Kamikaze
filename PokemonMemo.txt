@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Team name: Kamikaze
 Game name: PokemonMemo
 Team members: prot3ct, Kristina.Barutska, shOOter,  Suzana_Manova_2, Krasimir_Zlatkov, rossi.bundeva, zorie
@@ -19,6 +18,5 @@ Brief description:
 - When the game starts, all tiles are turned face down.
 - The player then flips over two cards, selecting them by clicking on them. If the two tiles have the same image, they remain face up. Otherwise, the tiles flip back over after a small period of time.
 - The goal of the game is to get all the tiles flipped face up (i.e., find all the matching image pairs) in the least number of tries. That means that lower number of tries are better scores.
-=======
-https://www.youtube.com/watch?v=UHM3Ub0KQks&feature=youtu.be
->>>>>>> origin/master
+
+
