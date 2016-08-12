@@ -8,7 +8,6 @@ gradient.addColorStop("0","magenta");
 gradient.addColorStop("0.5","blue");
 gradient.addColorStop("1.0","red");
 
-
 var rows = 4;
 var cols = 5;
 
@@ -37,16 +36,16 @@ var backImage = document.getElementById('pokemon-logo');
 
 Tile.prototype.drawFaceDown = function () {
     ctx.fillStyle = '#6991AC';
-    ctx.strokeStyle = gradient;
     ctx.fillRect(this.x, this.y, this.width, this.width);
+    ctx.strokeStyle = gradient;
     ctx.stroke();
     ctx.drawImage(backImage, 0, 0, this.width, this.width, this.x, this.y, this.width, this.width);
 };
 
 Tile.prototype.drawFaceUp = function () {
     ctx.fillStyle = '#6991AC';
-    ctx.strokeStyle = "#999";
     ctx.fillRect(this.x, this.y, this.width, this.width);
+    ctx.strokeStyle = "#999";
     ctx.stroke();
     ctx.drawImage(this.face, 0, 0, this.width, this.width, this.x, this.y, this.width, this.width);
 };
@@ -56,26 +55,10 @@ Tile.prototype.isUnderMouse = function (x, y) {
         y >= this.y && y <= this.y + this.width;
 };
 
-var possibleFaces = images.slice(0);
-var selected = [];
-for (var i = 0; i < (cols * rows) / 2; i++) {
-    var randomInd = Math.floor(Math.random() * possibleFaces.length);
-    var face = possibleFaces[randomInd];
-    selected.push(face);
-    selected.push(face);
-    possibleFaces.splice(randomInd, 1);
-}
-
-selected.sort(function () {
-    return 0.5 - Math.random();
-});
-
-
 var tiles = [];
 for (var col = 0; col < cols; col++) {
     for (var row = 0; row < rows; row++) {
         tiles.push(new Tile(col * 110 + 40 , row * 110, undefined));
-        console.log(tiles.face);
     }
 }
 
@@ -85,10 +68,10 @@ var clickedCount = 0;
 var firstPreviousClickedTile = 0;
 var secondPreviousClickedTile = 0;
 var totalClicks = 0;
+
 canvas.addEventListener('click', function (event) {
     var x = event.pageX - canvasLeft,
         y = event.pageY - canvasTop;
-    console.log(x, y);
 
     for (var i = 0; i < tiles.length; i++) {
         var tile = tiles[i];
@@ -115,7 +98,6 @@ canvas.addEventListener('click', function (event) {
                 tile.face = images[randomImageIndex];
             }
             	
-            console.log('clicked an element '+ x + ' ' + y);
             clickedCount += 1;
             if(clickedCount % 2 == 1){
                 if(clickedCount !== 1 && (firstPreviousClickedTile.face !== secondPreviousClickedTile.face)){
@@ -132,8 +114,7 @@ canvas.addEventListener('click', function (event) {
             }
             document.getElementById('scoreButton').textContent = 'Score: ' + scoreCounter + ' points';
             Draw();
-        }
-        
+        }       
     }
 
 }, false);
@@ -158,7 +139,6 @@ document.getElementById('resetButton').addEventListener('click', function (event
 
     Draw();
 }, false);
-
 
 var numberStates = [];
 for (var i = 0; i < tiles.length / 2; i++) {
